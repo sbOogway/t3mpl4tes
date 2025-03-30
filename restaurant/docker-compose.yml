@@ -1,0 +1,18 @@
+services:
+  website:
+    container_name: template_website
+
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    ports:
+      - 9999:9999
+
+    volumes:
+      - nix-store:/nix
+      - gopath:/go
+
+volumes:
+  nix-store:
+  gopath:

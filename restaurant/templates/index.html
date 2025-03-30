@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{.Name}}</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/dheereshagrwal/colored-icons@1.7.8/src/app/ci.min.css"
+    />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <script src="/static/js/script.js"></script>
+    <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon" />
+  </head>
+  <body class="flex flex-even">
+    <main
+      class="min-width-1200px flex flex-column flex-even flex-align main-width"
+    >
+      <header
+        id="header"
+        class="flex flex-center-vert padding-1rem flex-column width-100"
+      >
+        <div class="flex">
+          <div>
+            <img
+              src="/static/images/logo.webp"
+              height="64"
+              width="64"
+              alt="website logo"
+            />
+          </div>
+          <!-- <h1>{{.Name}}</h1> -->
+          <!-- <div
+            onclick="toggleNavbar()"
+            style="margin-left: auto; cursor: pointer"
+          > -->
+          <div
+            style="margin-left: auto; cursor: pointer"
+            class="flex gap-1rem flex-align"
+          >
+            <a id="wa" href="https://wa.me/3334445552"
+              ><img
+                src="/static/images/wa.png"
+                height="64"
+                width="64"
+                alt="Chat on whatsapp"
+                style="max-width: 64px; max-height: 64px; z-index: 99"
+            /></a>
+
+            <!-- <a href="/static/menu.pdf" target="_blank">
+              <div class="sha-container">
+                <div class="sha-shadow"></div>
+                <div class="sha-content cta-minor card btn">📜 Menu</div>
+              </div>
+            </a>
+            <a href="">
+              <div class="sha-container">
+                <div class="sha-shadow"></div>
+                <div class="sha-content cta-major card btn">🍽️ Prenota</div>
+              </div>
+            </a>
+            <a href="">
+              <div class="sha-container">
+                <div class="sha-shadow"></div>
+                <div class="sha-content cta-invert card btn">📞 Chiamaci</div>
+              </div>
+            </a> -->
+            <!-- <img
+              src="/static/images/menu.svg"
+              height="64"
+              width="64"
+              alt="Navigation menu"
+            /> -->
+          </div>
+        </div>
+      </header>
+
+      <button class="pointer" id="homeBtn" onclick="topScroll()">🛖</button>
+      <!-- <button class="pointer" >🛖</button> -->
+      <!-- <a id="wa" href="https://wa.me/3334445552"
+        ><img
+          src="/static/images/wa.png"
+          height="64"
+          width="64"
+          alt="Chat on whatsapp"
+          style="max-width: 64px; max-height: 64px; z-index: 99"
+      /></a> -->
+
+      <section id="home" class="height-85vh padding-1rem width-100 grid">
+        <div
+          class="sha-over flex flex-column flex-align flex-just"
+          style="z-index: 5"
+        >
+          <h1 class="xxl-text bg-title padding-lateral" style="z-index: 3">
+            {{.Name}}
+          </h1>
+          <h2 class="l-text bg-title padding-1rem" style="z-index: 3">
+            {{.Description}}
+          </h2>
+          <div class="flex gap-1rem margintop-1rem">
+            <a href="/static/menu.pdf" target="_blank">
+              <div class="sha-container">
+                <div class="sha-shadow"></div>
+                <div class="sha-content cta-minor card btn">📜 Menu</div>
+              </div>
+            </a>
+            <a href="">
+              <div class="sha-container">
+                <div class="sha-shadow"></div>
+                <div class="sha-content cta-major card btn">🍽️ Prenota</div>
+              </div>
+            </a>
+            <a href="">
+              <div class="sha-container">
+                <div class="sha-shadow"></div>
+                <div class="sha-content cta-invert card btn">📞 Chiamaci</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="sha-shadow"></div>
+        <div
+          id="newbgs"
+          class="flex flex-column height-fit sha-over sha-content"
+          style="z-index: 1"
+        >
+          {{range .Photos}}
+
+
+          <div
+            style="
+              background-image: url('{{.img}}');
+            "
+          ></div>
+          {{end}}
+        </div>
+
+      </section>
+
+      <section id="fade-in" class="width-100"></section>
+
+      <section
+        id="food"
+        class="flex flex-column width-100 height-fit padding-1rem"
+      >
+        <h3 class="xl-text">Le nostre specialità</h3>
+        <div class="collage-container gap-1rem padding-1rem">
+          {{range .Photos}}
+          <div class="grid-item sha-container">
+            <div class="sha-shadow"></div>
+
+            <img
+              class="collage-photo sha-content border-1rem"
+              src="{{.img}}"
+              alt=""
+            />
+          </div>
+
+          {{end}}
+        </div>
+      </section>
+
+      <section id="history" class="width-100 padding-1rem padding-top10">
+        <h3 class="xl-text">La nostra storia</h3>
+        <div id="story" class="flex">
+          <p class="m-text padding-1rem flex-equal">
+            Nel cuore della nostra città, {{.Name}} è molto più di un semplice
+            ristorante; è un viaggio attraverso le tradizioni culinarie
+            italiane. Fondato nel 2010 da una famiglia di chef appassionati, il
+            nostro ristorante nasce dall'amore per la cucina autentica e dai
+            ricordi di pranzi domenicali trascorsi insieme. <br />
+            <br />
+            
+          </p>
+          <div class="grid flex-equal">
+            <div class="sha-shadow"></div>
+            <img
+              class="sha-content scalable-image"
+              src="/static/images/staff.webp"
+              alt="Staff del ristorante"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="width-100 padding-1rem padding-top10">
+        <h3 class="xl-text">Cosa dicono di noi</h3>
+
+        <div class="flex gap-1rem padding-1rem" style="overflow-x: scroll">
+          {{range .Reviews}}
+          <div class="sha-container">
+            <div class="sha-shadow"></div>
+            <div
+              class="flex flex-column card cta-minor gap-1rem review sha-content s-text"
+            >
+              <div class="flex gap-1rem flex-align">
+                <img
+                  src="{{.img}}"
+                  height="50"
+                  width="50"
+                  alt="Profile photo for {{.Name}}"
+                />
+                <h3>{{.Name}}</h3>
+              </div>
+
+              <div class="flex">
+                <img src="/static/images/star.svg" alt="" />
+                <img src="/static/images/star.svg" alt="" />
+                <img src="/static/images/star.svg" alt="" />
+                <img src="/static/images/star.svg" alt="" />
+                <img src="/static/images/star.svg" alt="" />
+              </div>
+
+              <p>{{.Description}}</p>
+            </div>
+          </div>
+
+          {{ end }}
+        </div>
+      </section>
+
+      <section id="contatti" class="width-100 padding-1rem padding-top10">
+        <h3 class="xl-text">Dove siamo</h3>
+        <div class="grid padding-1rem width-100">
+          <div class="sha-shadow"></div>
+
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d{{ .Zoom }}!2d{{ .Longitude }}!3d{{ .Latitude }}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s{{ .Id }}!2s{{.Name}}!5e0!3m2!1sit!2sit!4v1729258504728!5m2!1sit!2sit"
+            style="border: 0; border-radius: 1rem"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            class="sha-content"
+          ></iframe>
+        </div>
+      </section>
+
+      <section id="fade-out" class="width-100"></section>
+
+      <footer class="width-100 flex padding-1rem flex-even">
+        <div>
+          <h4 class="m-text">Social</h4>
+          <i class="ci ci-instagram ci-2x"></i>
+          <i class="ci ci-facebook ci-2x"></i>
+          <i class="ci ci-google ci-2x"></i>
+          <i class="ci ci-whatsapp ci-2x"></i>
+        </div>
+
+        <div>
+          <h4 class="m-text">Contatti</h4>
+          <p class="s-text">{{.Address}}</p>
+          <p class="s-text">Tel. <a href="tel:{{.Phone}}">{{.Phone}}</a></p>
+          <p class="s-text">Email <a href="mailto:{{.Email}}">{{.Email}}</a></p>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>
