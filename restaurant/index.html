@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{{.Name}}</title>
+    <title>r3st4ur4nt</title>
 
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
@@ -14,9 +14,9 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/dheereshagrwal/colored-icons@1.7.8/src/app/ci.min.css"
     />
-    <link rel="stylesheet" href="t3mpl4tes/restaurant/static/css/style.css" />
-    <script src="/static/js/script.js"></script>
-    <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="static/css/style.css" />
+    <script src="static/js/script.js"></script>
+    <link rel="icon" href="static/images/favicon.ico" type="image/x-icon" />
   </head>
   <body class="flex flex-even">
     <main
@@ -29,7 +29,7 @@
         <div class="flex">
           <div>
             <img
-              src="/static/images/logo.webp"
+              src="static/images/favicon.ico"
               height="64"
               width="64"
               alt="website logo"
@@ -46,14 +46,14 @@
           >
             <a id="wa" href="https://wa.me/3334445552"
               ><img
-                src="/static/images/wa.png"
+                src="static/images/wa.png"
                 height="64"
                 width="64"
                 alt="Chat on whatsapp"
                 style="max-width: 64px; max-height: 64px; z-index: 99"
             /></a>
 
-            <!-- <a href="/static/menu.pdf" target="_blank">
+            <!-- <a href="static/menu.pdf" target="_blank">
               <div class="sha-container">
                 <div class="sha-shadow"></div>
                 <div class="sha-content cta-minor card btn">📜 Menu</div>
@@ -71,7 +71,7 @@
                 <div class="sha-content cta-invert card btn">📞 Chiamaci</div>
               </div>
             </a> -->
-            <!-- <img
+            <!-- <img 
               src="/static/images/menu.svg"
               height="64"
               width="64"
@@ -98,16 +98,16 @@
           style="z-index: 5"
         >
           <h1 class="xxl-text bg-title padding-lateral" style="z-index: 3">
-            {{.Name}}
+            tha r3st4ur4nt
           </h1>
           <h2 class="l-text bg-title padding-1rem" style="z-index: 3">
-            {{.Description}}
+            swaggy restaurant in the middle of nowhere
           </h2>
           <div class="flex gap-1rem margintop-1rem">
-            <a href="/static/menu.pdf" target="_blank">
+            <a href="static/menu.pdf" target="_blank">
               <div class="sha-container">
                 <div class="sha-shadow"></div>
-                <div class="sha-content cta-minor card btn">📜 Menu</div>
+                <div class="sha-content cta-major card btn">📜 Menu</div>
               </div>
             </a>
             <a href="">
@@ -131,17 +131,14 @@
           class="flex flex-column height-fit sha-over sha-content"
           style="z-index: 1"
         >
-          {{range .Photos}}
-
-
           <div
-            style="
-              background-image: url('{{.img}}');
-            "
+            style="background-image: url('static/images/wallpaper.jpeg')"
           ></div>
-          {{end}}
+          <div style="background-image: url('static/images/staff.webp')"></div>
+          <div style="background-image: url('static/images/wa1.jpeg')"></div>
+          <div style="background-image: url('static/images/wa2.jpeg')"></div>
+          <div style="background-image: url('static/images/wa3.jpeg')"></div>
         </div>
-
       </section>
 
       <section id="fade-in" class="width-100"></section>
@@ -152,18 +149,35 @@
       >
         <h3 class="xl-text">Le nostre specialità</h3>
         <div class="collage-container gap-1rem padding-1rem">
-          {{range .Photos}}
           <div class="grid-item sha-container">
             <div class="sha-shadow"></div>
 
             <img
               class="collage-photo sha-content border-1rem"
-              src="{{.img}}"
+              src="static/images/food1.jpeg"
               alt=""
             />
           </div>
 
-          {{end}}
+          <div class="grid-item sha-container">
+            <div class="sha-shadow"></div>
+
+            <img
+              class="collage-photo sha-content border-1rem"
+              src="static/images/food2.jpeg"
+              alt=""
+            />
+          </div>
+
+          <div class="grid-item sha-container">
+            <div class="sha-shadow"></div>
+
+            <img
+              class="collage-photo sha-content border-1rem"
+              src="static/images/food3.jpeg"
+              alt=""
+            />
+          </div>
         </div>
       </section>
 
@@ -171,19 +185,18 @@
         <h3 class="xl-text">La nostra storia</h3>
         <div id="story" class="flex">
           <p class="m-text padding-1rem flex-equal">
-            Nel cuore della nostra città, {{.Name}} è molto più di un semplice
-            ristorante; è un viaggio attraverso le tradizioni culinarie
+            Nel cuore della nostra città, tha r3st4ur4nt è molto più di un
+            semplice ristorante; è un viaggio attraverso le tradizioni culinarie
             italiane. Fondato nel 2010 da una famiglia di chef appassionati, il
             nostro ristorante nasce dall'amore per la cucina autentica e dai
             ricordi di pranzi domenicali trascorsi insieme. <br />
             <br />
-            
           </p>
           <div class="grid flex-equal">
             <div class="sha-shadow"></div>
             <img
               class="sha-content scalable-image"
-              src="/static/images/staff.webp"
+              src="static/images/staff.webp"
               alt="Staff del ristorante"
             />
           </div>
@@ -194,7 +207,6 @@
         <h3 class="xl-text">Cosa dicono di noi</h3>
 
         <div class="flex gap-1rem padding-1rem" style="overflow-x: scroll">
-          {{range .Reviews}}
           <div class="sha-container">
             <div class="sha-shadow"></div>
             <div
@@ -202,27 +214,129 @@
             >
               <div class="flex gap-1rem flex-align">
                 <img
-                  src="{{.img}}"
+                  src="static/images/google/reviews/il_mio_gatto_mouse.webp"
                   height="50"
                   width="50"
                   alt="Profile photo for {{.Name}}"
                 />
-                <h3>{{.Name}}</h3>
+                <h3>matia</h3>
               </div>
 
               <div class="flex">
-                <img src="/static/images/star.svg" alt="" />
-                <img src="/static/images/star.svg" alt="" />
-                <img src="/static/images/star.svg" alt="" />
-                <img src="/static/images/star.svg" alt="" />
-                <img src="/static/images/star.svg" alt="" />
+                <img src="static/images/star.svg" alt="" />
+                <img src="static/images/star.svg" alt="" />
+                <img src="static/images/star.svg" alt="" />
+                <img src="static/images/star.svg" alt="" />
+                <img src="static/images/star.svg" alt="" />
               </div>
 
-              <p>{{.Description}}</p>
+              <p>molto buono yeash</p>
             </div>
           </div>
+          <div class="sha-container">
+            <div class="sha-shadow"></div>
+            <div
+              class="flex flex-column card cta-minor gap-1rem review sha-content s-text"
+            >
+              <div class="flex gap-1rem flex-align">
+                <img
+                  src="static/images/google/reviews/il_mio_gatto_mouse.webp"
+                  height="50"
+                  width="50"
+                  alt="Profile photo for {{.Name}}"
+                />
+                <h3>matia</h3>
+              </div>
 
-          {{ end }}
+              <div class="flex">
+                <img src="static/images/star.svg" alt="" />
+                <img src="static/images/star.svg" alt="" />
+                <img src="static/images/star.svg" alt="" />
+                <img src="static/images/star.svg" alt="" />
+                <img src="static/images/star.svg" alt="" />
+              </div>
+
+              <p>molto buono yeash</p>
+            </div>
+          </div>
+          <div class="sha-container">
+            <div class="sha-shadow"></div>
+            <div
+              class="flex flex-column card cta-minor gap-1rem review sha-content s-text"
+            >
+              <div class="flex gap-1rem flex-align">
+                <img
+                  src="static/images/google/reviews/il_mio_gatto_mouse.webp"
+                  height="50"
+                  width="50"
+                  alt="Profile photo for {{.Name}}"
+                />
+                <h3>matia</h3>
+              </div>
+
+              <div class="flex">
+                <img src="static/images/star.svg" alt="" />
+                <img src="static/images/star.svg" alt="" />
+                <img src="static/images/star.svg" alt="" />
+                <img src="static/images/star.svg" alt="" />
+                <img src="static/images/star.svg" alt="" />
+              </div>
+
+              <p>molto buono yeash</p>
+            </div>
+          </div>
+          <div class="sha-container">
+            <div class="sha-shadow"></div>
+            <div
+              class="flex flex-column card cta-minor gap-1rem review sha-content s-text"
+            >
+              <div class="flex gap-1rem flex-align">
+                <img
+                  src="static/images/google/reviews/il_mio_gatto_mouse.webp"
+                  height="50"
+                  width="50"
+                  alt="Profile photo for {{.Name}}"
+                />
+                <h3>matia</h3>
+              </div>
+
+              <div class="flex">
+                <img src="static/images/star.svg" alt="" />
+                <img src="static/images/star.svg" alt="" />
+                <img src="static/images/star.svg" alt="" />
+                <img src="static/images/star.svg" alt="" />
+                <img src="static/images/star.svg" alt="" />
+              </div>
+
+              <p>molto buono yeash</p>
+            </div>
+          </div>
+          <div class="sha-container">
+            <div class="sha-shadow"></div>
+            <div
+              class="flex flex-column card cta-minor gap-1rem review sha-content s-text"
+            >
+              <div class="flex gap-1rem flex-align">
+                <img
+                  src="static/images/google/reviews/il_mio_gatto_mouse.webp"
+                  height="50"
+                  width="50"
+                  alt="Profile photo for {{.Name}}"
+                />
+                <h3>matia</h3>
+              </div>
+
+              <div class="flex">
+                <img src="static/images/star.svg" alt="" />
+                <img src="static/images/star.svg" alt="" />
+                <img src="static/images/star.svg" alt="" />
+                <img src="static/images/star.svg" alt="" />
+                <img src="static/images/star.svg" alt="" />
+              </div>
+
+              <p>molto buono yeash</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -255,9 +369,9 @@
 
         <div>
           <h4 class="m-text">Contatti</h4>
-          <p class="s-text">{{.Address}}</p>
-          <p class="s-text">Tel. <a href="tel:{{.Phone}}">{{.Phone}}</a></p>
-          <p class="s-text">Email <a href="mailto:{{.Email}}">{{.Email}}</a></p>
+          <p class="s-text">r3st4ur4nt</p>
+          <p class="s-text">Tel. <a href="tel:748464651">48646546165</a></p>
+          <p class="s-text">Email <a href="mailto:{{.Email}}">r3st4ur4nt@yo.yolo</a></p>
         </div>
       </footer>
     </main>
